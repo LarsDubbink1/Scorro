@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a class="sidebarbutton" href="../index.html">Home</a>
+            <div class="dropdown">
+                <a class="sidebarbutton" href="../Diersoorten/index.html">Diersoorten</a>
+                <div class="dropdown-content">
+                    <a href="../Diersoorten/honden.html">Honden</a>
+                    <a href="../Diersoorten/katten.html">Katten</a>
+                </div>
+            </div>
+            <a class="sidebarbutton" href="../Quiz/index.html">Quiz</a>
+            <a class="sidebarbutton" href="../Taxonomie/index.html">Taxonomie</a>
+        </div>
+        <div class="header">
+            <h1 class="headerText">Diersoorten</h1>
+        </div>
+        <div class="mainbody">
+            <div id="QuestionsPicker">
+                <div class="wrapper">
+                    <h1>Welke dieren wil je oefenen?</h1>
+                    <div class="checkboxes" id="HondenCheckbox" onclick="if (document.getElementById('HondenOefenen').checked == true) {
+                        document.getElementById('HondenOefenen').checked = false;
+                    } else {
+                        document.getElementById('HondenOefenen').checked = true;
+                    }">
+                        <input type="checkbox" class="QuestionsPickerCheckbox" id="HondenOefenen" hidden>
+                        <label for="HondenOefenen" class="QuestionsPickerText"><h1>Hondenrassen</h1></label>
+                    </div>
+                    <div class="checkboxes" id="KattenCheckbox" onclick="if (document.getElementById('KattenOefenen').checked == true) {
+                        document.getElementById('KattenOefenen').checked = false;
+                    } else {
+                        document.getElementById('KattenOefenen').checked = true;
+                    }">
+                        <input type="checkbox" class="QuestionsPickerCheckbox" id="KattenOefenen" hidden>
+                        <label for="HondenOefenen" class="QuestionsPickerText"><h1>Kattenrassen</h1></label>
+                    </div>
+                    <button class="startbutton" onclick="startQuiz()"><span>Start</span></button>
+                </div>
+            </div>
+            <div id="QuestionsDiv">
+                <h1 id="vraagTekst">Welke hond is dit?</h1>
+                <img id="vraagFoto" src="../Diersoorten/Fotos/Honden/Afghaanse-Windhond.jpg">
+                <input class="answerBoxes" type="text" id="DierenRasVraag">
+                <select class="answerBoxes" id="SelecteerHondenSoort">
+                    <option value="HEV">Herdershonden en Veedrijvers</option>
+                    <option value="PSMS">Pinschers en Schnauzers, Mollosers en Sennehonden</option>
+                    <option value="T">Terriërs</option>
+                    <option value="D">Dashonden</option>
+                    <option value="SO">Spitsen en Oertypes</option>
+                    <option value="LZ">Lopende honden en zweethonden</option>
+                    <option value="S">Staande honden</option>
+                    <option value="RWS">Retrievers, waterhonden en spaniels</option>
+                    <option value="G">Gezelschapshonden</option>
+                    <option value="W">Windhonden</option>
+                </select>
+                <select class="answerBoxes" id="SelecteerKattenSoort">
+                    <option value="K">Kortharig</option>
+                    <option value="HL">Half Langharig</option>
+                    <option value="L">Langharig</option>
+                    <option value="BH">Bijzondere Haarstructuur</option>
+                </select>
+                <button id="antwoordInvoerenButton" onclick="AntwoordInvoeren()">Antwoord</button>
+                <h2 id="antwoordCheckerTekst"></h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
